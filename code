@@ -1,0 +1,20 @@
+#Creting a fucntion for perfect_shuffle
+def perfect_shuffle(deck):
+    length = len(deck)
+    half_length = length//2
+    
+    #Split the deck into two halves
+    first_half = deck[:half_length]
+    second_half = deck[half_length:]
+    
+    # Interleave the two halves
+    shuffled_deck = [None]*length
+    shuffled_deck[::2] = first_half
+    shuffled_deck[1::2] = second_half
+    
+    return shuffled_deck
+    
+#Example Usage
+initial_deck = [1,2,3,4,5,6]
+shuffled_deck = perfect_shuffle(initial_deck)
+print(shuffled_deck)
